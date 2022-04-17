@@ -1,0 +1,22 @@
+.product{
+    /* border: 5px solid green; */
+
+
+}
+.product img{
+    height: 300px;
+    width: 300px;
+}
+.btn-cart{
+    width: 100%;
+    border: none;
+    color: rgb(63, 63, 168);
+    background-color: white;
+}
+.icon{
+    margin-left: 5px;
+}
+.btn-cart:hover{
+    background-color: rgb(202, 244, 230);
+    
+}

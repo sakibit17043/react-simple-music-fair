@@ -1,10 +1,12 @@
 
 import './App.css';
+import Shop from './components/Shop/Shop';
 
 function App() {
   return (
-    <div className="App">
-      <h1 style={{color:'red'}}>Music Fair</h1>
+    <div>
+      <h1 style={{color:'red',textAlign:'center'}}>Music Fair</h1>
+      <Shop></Shop>
     </div>
   );
 }
