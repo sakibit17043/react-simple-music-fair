@@ -1,6 +1,13 @@
 import React from 'react';
 
 const Cart = ({name,reload}) => {
+    console.log(name)
+    console.log(name.length)
+    const random = Math.floor(Math.random()*(name.length))
+    const chooseItem = (random) =>{
+        const item = name[random];
+        alert(item)
+    }
     
     
     return (
@@ -10,7 +17,10 @@ const Cart = ({name,reload}) => {
            }
            <p>
 
-           <button style={{color:'green'}}>CHOOSE 1 FOR ME</button>
+           <button onClick={()=>chooseItem(random)} style={{color:'green'}}>CHOOSE 1 FOR ME</button>
+        
+            
+         
            </p>
            <p>
 
