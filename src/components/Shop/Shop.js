@@ -27,6 +27,9 @@ const Shop = () => {
 
 
     }
+    const reload = () =>{
+        setCartName([])
+    }
     
     
 
@@ -44,7 +47,10 @@ const Shop = () => {
             </div>
             <div className="cart-container">
               
-               <Cart name ={cartName}></Cart>
+               <Cart 
+               name ={cartName}
+               reload = {reload}
+               ></Cart>
                 
             </div>
             
