@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
 
@@ -14,7 +15,21 @@ const Shop = () => {
         {key:7,name:'Drums',price:'2800',image:'images/7.webp'},
         {key:8,name:'Violin',price:'1500',image:'images/8.webp'},
         {key:9,name:'Guitar',price:'350',image:'images/9.webp'}
-    ]
+    ];
+    const [cartName,setCartName] = useState([])
+    
+   
+    const handleAddToCart = (name) =>{
+        // cartName.push(name);
+      const  newCartName = [...cartName,name]
+        setCartName(newCartName);
+        // console.log(cartName)
+
+
+    }
+    
+    
+
     return (
         <div className='shop-container'>
             <div className="product-container">
@@ -22,12 +37,15 @@ const Shop = () => {
                     products.map(product =><Product
                     key={product.key}
                     product = {product}
+                    handleAddToCart = {handleAddToCart}
                     ></Product> )
                 }
                 
             </div>
             <div className="cart-container">
-                <h1>cart</h1>
+              
+               <Cart name ={cartName}></Cart>
+                
             </div>
             
         </div>

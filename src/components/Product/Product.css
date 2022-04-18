@@ -1,11 +1,16 @@
 .product{
     /* border: 5px solid green; */
+    background-color: white;
 
 
 }
 .product img{
     height: 300px;
     width: 300px;
+    margin-left: 13px;
+}
+.product-name,.product-price{
+    margin-left: 13px;
 }
 .btn-cart{
     width: 100%;

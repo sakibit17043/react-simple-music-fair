@@ -10,14 +10,15 @@ const Product = (props) => {
     // const {price} = props.Product;
     console.log(props.product.image)
     const {image,price,name} =props.product;
+  
     return (
         <div className='product'>
             <img src={image} alt="" />
-            <h2>{name}</h2>
-            <h3>${price}</h3>
+            <h2 className='product-name'>{name}</h2>
+            <h3 className='product-price'>${price}</h3>
             
                 
-                    <button className="btn-cart">
+                    <button onClick={()=>props.handleAddToCart(name)} className="btn-cart">
                         <p>ADD TO CART
                             <FontAwesomeIcon className='icon' icon={faShoppingCart}/>
                         
