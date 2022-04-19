@@ -61,6 +61,9 @@ const Shop = () => {
                 
             </div>
             <div className="cart-container">
+                <div className="cart-information">
+
+                
                 {
                     cartName.map(item =><Cart
                     key={item.key}
@@ -78,6 +81,7 @@ const Shop = () => {
                choosingItem = {choosingItem}
                ></CartButton>
                 
+            </div>
             </div>
             
         </div>

@@ -1,4 +1,5 @@
 .shop-container{
+
     display: grid;
     grid-template-columns: 4fr 2fr;
 }
@@ -7,10 +8,10 @@
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
 }
-/* .cart-container{
+.cart-information{
     position:sticky;
-    top:0;
-} */
+    top:0px;
+}
 @media screen and (max-width:768px){
     .product-container{
         grid-template-columns: 1fr;
