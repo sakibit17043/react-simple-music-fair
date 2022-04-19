@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
+import CartButton from '../CartButton/CartButton';
 import Product from '../Product/Product';
 import './Shop.css';
 
@@ -17,18 +18,32 @@ const Shop = () => {
         {key:9,name:'Guitar',price:'350',image:'images/9.webp'}
     ];
     const [cartName,setCartName] = useState([])
+    const [choosingItem,setChoosingItem] = useState('')
+// console.log(cartName)
     
    
-    const handleAddToCart = (name) =>{
+    const handleAddToCart = (productDetails) =>{
         // cartName.push(name);
-      const  newCartName = [...cartName,name]
+      const  newCartName = [...cartName,productDetails]
         setCartName(newCartName);
         // console.log(cartName)
 
 
     }
+    
+    const random = Math.floor(Math.random()*(cartName.length))
+    const chooseItem = () =>{
+        const item = cartName[random].name;
+        // console.log(item)
+        // alert(item)
+        setChoosingItem(item);
+      
+    }
+
+
     const reload = () =>{
         setCartName([])
+        setChoosingItem('')
     }
     
     
@@ -46,11 +61,22 @@ const Shop = () => {
                 
             </div>
             <div className="cart-container">
+                {
+                    cartName.map(item =><Cart
+                    key={item.key}
+                    name = {item.name}
+                    // image = {item.image}
+                    
+                    ></Cart>)
+                }
               
-               <Cart 
-               name ={cartName}
+               <CartButton
+                
                reload = {reload}
-               ></Cart>
+               
+               chooseItem = {chooseItem}
+               choosingItem = {choosingItem}
+               ></CartButton>
                 
             </div>
             
