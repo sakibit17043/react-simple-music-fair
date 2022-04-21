@@ -1,7 +1,12 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 import React from 'react';
 import './Cart.css'
 
-const Cart = ({name}) => {
+const Cart = (props) => {
+    const {name,image,index} = props.item
+    
     
     // {name,reload,chooseItem,choosingItem} = props;
     
@@ -15,13 +20,17 @@ const Cart = ({name}) => {
     //     setChoosingItem(item);
       
     // }
-    
+   
     
     return (
         
         <div className='cart-info'>
-           
-                <h1>{name}</h1>
+            <div className="cart-details">
+            <img src={image} alt="" />
+             <h3>{name}</h3>
+
+            </div>
+            <FontAwesomeIcon onClick={()=>props.delete(index)} icon={faTrash}/>
            
            {/* <p>
 

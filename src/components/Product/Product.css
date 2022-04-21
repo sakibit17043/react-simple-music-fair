@@ -1,13 +1,20 @@
 .product{
-    /* border: 5px solid green; */
+    
+    /* background-color:rebeccapurple; */
+    border-radius: 10px;
     background-color: white;
+    
+
+
 
 
 }
 .product img{
     height: 300px;
-    width: 300px;
-    margin-left: 13px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    /* margin-left: 13px; */
 }
 .product-name,.product-price{
     margin-left: 13px;
@@ -15,13 +22,19 @@
 .btn-cart{
     width: 100%;
     border: none;
+    border-bottom-left-radius:10px;
+    border-bottom-right-radius:10px;
     color: rgb(63, 63, 168);
     background-color: white;
+    text-align: left;
+    padding-left: 13px;
+     
+    color:royalblue; 
 }
 .icon{
     margin-left: 5px;
 }
 .btn-cart:hover{
-    background-color: rgb(202, 244, 230);
+    background-color: rgb(163, 173, 181);
     
 }

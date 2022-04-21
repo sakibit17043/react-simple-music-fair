@@ -1,4 +1,5 @@
 import React from 'react';
+import './CartButton.css';
 
 const CartButton = ({reload,chooseItem,choosingItem}) => {
     
@@ -6,7 +7,7 @@ const CartButton = ({reload,chooseItem,choosingItem}) => {
         <div>
             <p>
 
-                <button onClick={chooseItem} style={{ color: 'green' }}>CHOOSE 1 FOR ME</button>
+                <button className='cart-button' onClick={chooseItem} style={{ color: 'green' }}>CHOOSE 1 FOR ME</button>
 
 
 
@@ -15,7 +16,7 @@ const CartButton = ({reload,chooseItem,choosingItem}) => {
 
             <p>
 
-                <button onClick={reload} style={{ color: 'purple' }}>CHOOSE AGAIN</button>
+                <button className='cart-button' onClick={reload} style={{ color: 'purple' }}>CHOOSE AGAIN</button>
             </p>
 
         </div>

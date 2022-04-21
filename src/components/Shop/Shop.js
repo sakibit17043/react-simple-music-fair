@@ -19,16 +19,26 @@ const Shop = () => {
     ];
     const [cartName,setCartName] = useState([])
     const [choosingItem,setChoosingItem] = useState('')
+    
 // console.log(cartName)
     
    
     const handleAddToCart = (productDetails) =>{
+        // if(cartNameincludes(productDetails)){
         // cartName.push(name);
-      const  newCartName = [...cartName,productDetails]
+        productDetails.index=cartName.length;
+      const  newCartName = [...cartName,productDetails];
         setCartName(newCartName);
-        // console.log(cartName)
+        console.log(productDetails)
+        // }
+        
 
 
+    }
+    const deleteItem =(id) =>{
+        const newCartName = cartName.filter(item => item.index !== id)
+        console.log(newCartName)
+        setCartName(newCartName)
     }
     
     const random = Math.floor(Math.random()*(cartName.length))
@@ -62,13 +72,16 @@ const Shop = () => {
             </div>
             <div className="cart-container">
                 <div className="cart-information">
+                    <h1>Selected Items</h1>
 
                 
                 {
                     cartName.map(item =><Cart
                     key={item.key}
-                    name = {item.name}
-                    // image = {item.image}
+            
+                    item ={item}
+                   
+                    delete = {deleteItem}
                     
                     ></Cart>)
                 }
