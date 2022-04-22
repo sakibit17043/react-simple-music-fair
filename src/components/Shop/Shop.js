@@ -26,10 +26,13 @@ const Shop = () => {
     const handleAddToCart = (productDetails) =>{
         // if(cartNameincludes(productDetails)){
         // cartName.push(name);
+        const existItem = cartName.find(item => item.key===productDetails.key);
+        if(!existItem){
         productDetails.index=cartName.length;
       const  newCartName = [...cartName,productDetails];
         setCartName(newCartName);
         console.log(productDetails)
+        }
         // }
         
 
