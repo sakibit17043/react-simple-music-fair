@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
 import CartButton from '../CartButton/CartButton';
+import Modal from '../Modal/Modal';
 import Product from '../Product/Product';
 import './Shop.css';
 
@@ -26,8 +27,12 @@ const Shop = () => {
     const handleAddToCart = (productDetails) =>{
         // if(cartNameincludes(productDetails)){
         // cartName.push(name);
+        // if(cartName.length>4){
+
+        // }
+        console.log(cartName.length)
         const existItem = cartName.find(item => item.key===productDetails.key);
-        if(!existItem){
+        if(!existItem && cartName.length<4){
         productDetails.index=cartName.length;
       const  newCartName = [...cartName,productDetails];
         setCartName(newCartName);
@@ -62,45 +67,59 @@ const Shop = () => {
     
 
     return (
-        <div className='shop-container'>
-            <div className="product-container">
-                {
-                    products.map(product =><Product
-                    key={product.key}
-                    product = {product}
-                    handleAddToCart = {handleAddToCart}
-                    ></Product> )
-                }
+        <div>
+                 {
+                 
+                 cartName.length>3?<Modal></Modal>:''
+             }
+          
+        
+             <div className='shop-container'>
+        
+         
+          
+          <div className="product-container">
+        
+              {
+                  products.map(product =><Product
+                  key={product.key}
+                  product = {product}
+                  handleAddToCart = {handleAddToCart}
+                  ></Product> )
+              }
                 
-            </div>
-            <div className="cart-container">
-                <div className="cart-information">
-                    <h1>Selected Items</h1>
-
-                
-                {
-                    cartName.map(item =><Cart
-                    key={item.key}
-            
-                    item ={item}
-                   
-                    delete = {deleteItem}
-                    
-                    ></Cart>)
-                }
               
-               <CartButton
-                
-               reload = {reload}
-               
-               chooseItem = {chooseItem}
-               choosingItem = {choosingItem}
-               ></CartButton>
-                
-            </div>
-            </div>
+          </div>
+          <div className="cart-container">
+              <div className="cart-information">
+                  <h1>Selected Items</h1>
+
+              
+              {
+                  cartName.map(item =><Cart
+                  key={item.key}
+          
+                  item ={item}
+                 
+                  delete = {deleteItem}
+                  
+                  ></Cart>)
+              }
             
+             <CartButton
+              
+             reload = {reload}
+             
+             chooseItem = {chooseItem}
+             choosingItem = {choosingItem}
+             ></CartButton>
+              
+          </div>
+          </div>
+          
+      </div>
         </div>
+       
     );
 };
 

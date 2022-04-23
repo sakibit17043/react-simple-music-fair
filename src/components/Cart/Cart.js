@@ -27,7 +27,7 @@ const Cart = (props) => {
         <div className='cart-info'>
             <div className="cart-details">
             <img src={image} alt="" />
-             <h3>{name}</h3>
+             <h5>{name}</h5>
 
             </div>
             <FontAwesomeIcon onClick={()=>props.delete(index)} icon={faTrash}/>

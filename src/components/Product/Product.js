@@ -18,7 +18,7 @@ const Product = (props) => {
             <h3 className='product-price'>${price}</h3>
             
                 
-                    <button onClick={()=>props.handleAddToCart(props.product)} className="btn-cart">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={()=>props.handleAddToCart(props.product)} className="btn-cart">
                         <p>ADD TO CART
                             <FontAwesomeIcon className='icon' icon={faShoppingCart}/>
                         

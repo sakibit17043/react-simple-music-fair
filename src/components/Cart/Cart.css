@@ -2,6 +2,8 @@
     display: grid;
     grid-template-columns: 4fr 2fr;
     align-items: center;
+    padding: 7px;
+
 }
 .cart-details{
     display: flex;
