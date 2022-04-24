@@ -20,17 +20,7 @@ const Shop = () => {
     ];
     const [cartName,setCartName] = useState([])
     const [choosingItem,setChoosingItem] = useState('')
-    
-// console.log(cartName)
-    
-   
     const handleAddToCart = (productDetails) =>{
-        // if(cartNameincludes(productDetails)){
-        // cartName.push(name);
-        // if(cartName.length>4){
-
-        // }
-        console.log(cartName.length)
         const existItem = cartName.find(item => item.key===productDetails.key);
         if(!existItem && cartName.length<4){
         productDetails.index=cartName.length;
@@ -38,10 +28,6 @@ const Shop = () => {
         setCartName(newCartName);
         console.log(productDetails)
         }
-        // }
-        
-
-
     }
     const deleteItem =(id) =>{
         const newCartName = cartName.filter(item => item.index !== id)
@@ -52,10 +38,7 @@ const Shop = () => {
     const random = Math.floor(Math.random()*(cartName.length))
     const chooseItem = () =>{
         const item = cartName[random].name;
-        // console.log(item)
-        // alert(item)
         setChoosingItem(item);
-      
     }
 
 
@@ -63,8 +46,6 @@ const Shop = () => {
         setCartName([])
         setChoosingItem('')
     }
-    
-    
 
     return (
         <div>
@@ -72,12 +53,9 @@ const Shop = () => {
                  
                  cartName.length>3?<Modal></Modal>:''
              }
-          
         
              <div className='shop-container'>
-        
-         
-          
+ 
           <div className="product-container">
         
               {
@@ -107,16 +85,12 @@ const Shop = () => {
               }
             
              <CartButton
-              
              reload = {reload}
-             
              chooseItem = {chooseItem}
              choosingItem = {choosingItem}
              ></CartButton>
-              
           </div>
           </div>
-          
       </div>
         </div>
        

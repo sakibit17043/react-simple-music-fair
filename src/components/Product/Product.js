@@ -6,9 +6,7 @@ import {faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 
 const Product = (props) => {
-    // console.log(props.Product.image)
-    // const {price} = props.Product;
-    // console.log(props.product)
+ 
     const {image,price,name} =props.product;
   
     return (
